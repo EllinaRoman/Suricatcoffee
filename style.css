@@ -1,0 +1,328 @@
+* {
+    --time-color: #895747;
+    --map-color: #5D3224;
+    --background-color: #F8E7DC;
+    --background-color-main: #FFF8F2;
+    --button: #F6E2CF;
+    --button-color-hover: #97765A;
+    --color-button-hover: #F8E1D9;
+    --filter-color: #4D271A;
+    --border: rgba(161, 125, 100, 0.27);
+    --price-obiem: #E5C2A9;
+    --price-obiem-border: #D2B49F;
+    --obiem: #835545;
+    --price: #603629;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Comfortaa', cursive;
+}
+
+.container {
+    max-width: 1100px;
+    min-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Header */
+
+.header {
+    height: 125px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo {
+    margin: 10px 30px 0 30px;
+}
+
+.time-map {
+    margin: 22px 30px 26px 0;
+}
+
+.time p {
+margin: 0;
+padding: 0;
+text-align: center;
+font-size: 1.5rem;
+color: var(--time-color);
+line-height: 130%;
+}
+
+.map {
+    color: var(--map-color);
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 0 13px 0;
+}
+
+/* Aside */
+
+.filter {
+    margin: 11.7rem 0 30rem 11.8rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    gap: 20px;
+    position: sticky;
+    top: 50px;
+}
+
+.button-filter-link {
+    background-color: var(--button);
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--filter-color);
+    width: 180px;
+    height: 64px;
+    letter-spacing: 7%;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.1s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 5px 8px rgba(161, 125, 100, 0.2);
+}
+
+.button-filter-link:hover {
+    background-color: var(--button-color-hover);
+    color: var(--color-button-hover);
+}
+
+.button-filter-link:active {
+    transform: scale(0.93);
+}
+
+.filter-and-menu {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Main */
+
+.main-content {
+    background-color: var(--background-color-main);
+    padding-bottom: 10rem;
+    position: relative;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.menu {
+    margin-left: 76px;
+}
+
+.menu-cel {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 35px;
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.price-obiem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 128px;
+    height: 30px;
+    background-color: var(--price-obiem);
+    border: 1.2px solid var(--price-obiem-border);
+    border-radius: 8px;
+}
+
+.price-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 128px;
+    height: 30px;
+    background-color: var(--price-obiem);
+    border: 1.2px solid var(--price-obiem-border);
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 1.5rem;
+    letter-spacing: 7%;
+    color: var(--price);
+    margin: 0;
+    user-select: none;
+}
+
+.obiem {
+    font-size: 1.2rem;
+    letter-spacing: 7%;
+    color: var(--obiem);
+    margin: 0 0 0 7px;
+    user-select: none;
+}
+
+.price-obiem .price {
+    font-size: 1.5rem;
+    letter-spacing: 7%;
+    color: var(--price);
+    margin: 0 7px 0 0;
+}
+
+
+
+.price-obiem,
+.price-center {
+    display: flex;
+    align-items: center;       /* вертикальное центрирование */
+    justify-content: center;   /* горизонтальное центрирование */
+    height: 30px;              /* фиксированная высота */
+    padding: 0;                /* убираем лишние внутренние отступы */
+    box-sizing: border-box;    /* border не ломает размеры */
+    background-color: var(--price-obiem);
+    border: 1.2px solid var(--price-obiem-border);
+    border-radius: 8px;
+}
+
+.price-obiem .price,
+.price-center .price,
+.price-obiem .obiem,
+.price-center .obiem {
+    margin: 0;                 /* убираем смещения текста */
+    line-height: 1;            /* корректируем вертикальное выравнивание */
+    user-select: none;
+}
+
+.price-obiem {
+    flex-direction: row;        /* цена и объём рядом */
+    justify-content: space-between; /* расстояние между ними */
+    padding: 0 7px;            /* немного пространства внутри */
+}
+
+.price-center {
+    flex-direction: row;       /* если нужно только цена по центру */
+}
+
+
+
+
+
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-type {
+    font-weight: bold;
+    line-height: 3%;
+    letter-spacing: 7%;
+    font-size: 2.7rem;
+    color: var(--filter-color);
+    padding-top: 7rem;
+    padding-bottom: 4.6rem;
+    margin: 0;
+}
+
+figcaption {
+    font-size: 1.6rem;
+    letter-spacing: 7%;
+    font-weight: 600;
+    color: var(--filter-color);
+    margin-top: 1.3rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+/* Footer */
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.img-contact {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 3rem;
+}
+
+
+
+.social-link {
+    font-size: 4rem; 
+    color: var(--map-color); 
+    text-decoration: none;
+    transition: transform 0.2s ease-in;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.prava {
+    margin-left: 3rem;
+    color: var(--map-color);
+    font-size: 2.4rem;
+    letter-spacing: 7%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.2rem;
+    margin-right: 30px;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact p {
+    color: var(--map-color);
+    letter-spacing: 7%;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 3rem 0 0 0;
+}
+
+.address a {
+    text-decoration: none;
+    font-size: 1.7rem;
+    letter-spacing: 7%;
+    color: var(--time-color);
+}
